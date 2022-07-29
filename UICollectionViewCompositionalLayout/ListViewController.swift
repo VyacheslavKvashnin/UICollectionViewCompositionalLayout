@@ -14,16 +14,13 @@ class ListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
-        
         setupCollectionView()
-        
     }
     
     func setupCollectionView() {
         collectionView = UICollectionView(frame: view.bounds, collectionViewLayout: UICollectionViewFlowLayout())
         collectionView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         collectionView.backgroundColor = .cyan
-        
         view.addSubview(collectionView)
         
         collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "cell")
@@ -32,6 +29,8 @@ class ListViewController: UIViewController {
         collectionView.dataSource = self
     }
 }
+
+
 
 // MARK: - UICollectionViewDelegate, UICollectionViewDataSource
 
@@ -44,5 +43,15 @@ extension ListViewController: UICollectionViewDelegate, UICollectionViewDataSour
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath)
         cell.backgroundColor = .blue
         return cell
+    }
+}
+
+
+
+// MARK: - UICollectionViewDelegateFlowLayout
+
+extension ListViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize.init(width: 100, height: 100)
     }
 }

@@ -1,15 +1,20 @@
 //
-//  CompositionalViewController.swift
+//  AdvancedViewController.swift
 //  UICollectionViewCompositionalLayout
 //
-//  Created by Вячеслав Квашнин on 29.07.2022.
+//  Created by Вячеслав Квашнин on 30.07.2022.
 //
 
 import UIKit
 
-class CompositionalViewController: UIViewController {
+class AdvancedViewController: UIViewController {
     
+    enum SectionKind: Int, CaseIterable {
+        case list, grid
+    }
+
     var collectionView: UICollectionView!
+    var dataSource: UICollectionViewDiffableDataSource<SectionKind, Int>!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,7 +23,7 @@ class CompositionalViewController: UIViewController {
         setupCollectionView()
      }
     
-    func setupCollectionView() {
+    private func setupCollectionView() {
         collectionView = UICollectionView(frame: view.bounds, collectionViewLayout: createLayout())
         collectionView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         collectionView.backgroundColor = .cyan
@@ -26,9 +31,18 @@ class CompositionalViewController: UIViewController {
         view.addSubview(collectionView)
         
         collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "cell")
-        
-        collectionView.delegate = self
-        collectionView.dataSource = self
+    }
+    
+    private func setupDataSource() {
+        dataSource = UICollectionViewDiffableDataSource<SectionKind, Int>(collectionView: collectionView, cellProvider: { collectionView, indexPath, itemIdentifier in
+            let section = SectionKind(rawValue: indexPath.section)!
+            switch section {
+            case .list:
+                <#code#>
+            case .grid:
+                <#code#>
+            }
+        })
     }
     
     private func createLayout() -> UICollectionViewLayout {
@@ -49,20 +63,5 @@ class CompositionalViewController: UIViewController {
                                                         bottom: 0, trailing: spacing)
         let layout = UICollectionViewCompositionalLayout(section: section)
         return layout
-    }
-}
-
-// MARK: - UICollectionViewDelegate, UICollectionViewDataSource
-
-extension CompositionalViewController: UICollectionViewDelegate, UICollectionViewDataSource {
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 15
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath)
-        cell.backgroundColor = .green
-        cell.layer.borderWidth = 1
-        return cell
     }
 }

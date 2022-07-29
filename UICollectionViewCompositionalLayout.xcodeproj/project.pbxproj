@@ -13,6 +13,8 @@
 		BD2148072894003A0070C4BF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD2148052894003A0070C4BF /* LaunchScreen.storyboard */; };
 		BD21480F28941E4B0070C4BF /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD21480E28941E4B0070C4BF /* MainTabBarController.swift */; };
 		BD2148112894467D0070C4BF /* CompositionalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD2148102894467C0070C4BF /* CompositionalViewController.swift */; };
+		BD2148132894682F0070C4BF /* AdvancedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD2148122894682F0070C4BF /* AdvancedViewController.swift */; };
+		BD21481528946BF40070C4BF /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD21481428946BF40070C4BF /* UserCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		BD2148082894003A0070C4BF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BD21480E28941E4B0070C4BF /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		BD2148102894467C0070C4BF /* CompositionalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompositionalViewController.swift; sourceTree = "<group>"; };
+		BD2148122894682F0070C4BF /* AdvancedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvancedViewController.swift; sourceTree = "<group>"; };
+		BD21481428946BF40070C4BF /* UserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +61,8 @@
 			isa = PBXGroup;
 			children = (
 				BD2147FA289400370070C4BF /* AppDelegate.swift */,
+				BD2148122894682F0070C4BF /* AdvancedViewController.swift */,
+				BD21481428946BF40070C4BF /* UserCell.swift */,
 				BD21480E28941E4B0070C4BF /* MainTabBarController.swift */,
 				BD2148102894467C0070C4BF /* CompositionalViewController.swift */,
 				BD2147FE289400370070C4BF /* ListViewController.swift */,
@@ -138,6 +144,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				BD2148112894467D0070C4BF /* CompositionalViewController.swift in Sources */,
+				BD2148132894682F0070C4BF /* AdvancedViewController.swift in Sources */,
+				BD21481528946BF40070C4BF /* UserCell.swift in Sources */,
 				BD2147FF289400370070C4BF /* ListViewController.swift in Sources */,
 				BD2147FB289400370070C4BF /* AppDelegate.swift in Sources */,
 				BD21480F28941E4B0070C4BF /* MainTabBarController.swift in Sources */,
