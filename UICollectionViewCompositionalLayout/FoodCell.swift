@@ -34,7 +34,6 @@ class FoodCell: UICollectionViewCell, SelfConfiguringCell {
         label.backgroundColor = .systemBlue
         addSubview(label)
         friendImageView.frame = self.bounds
-//        label.text = "123"
         backgroundColor = .green
     }
     

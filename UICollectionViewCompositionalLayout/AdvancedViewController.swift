@@ -51,6 +51,8 @@ class AdvancedViewController: UIViewController {
         return cell
     }
     
+    // MARK: - Manage the data in CollectionView
+    
     private func setupDataSource() {
         dataSource = UICollectionViewDiffableDataSource<SectionKind, Int>(collectionView: collectionView, cellProvider: { collectionView, indexPath, intValue in
             let section = SectionKind(rawValue: indexPath.section)!
@@ -75,6 +77,10 @@ class AdvancedViewController: UIViewController {
         }
         dataSource.apply(snapShot, animatingDifferences: true)
     }
+    
+    
+    // MARK: - Setup Layout
+    
     private func createListSection() -> NSCollectionLayoutSection {
         // sections -> groups -> items -> size
         let spacing = CGFloat(10)
