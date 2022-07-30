@@ -1,5 +1,5 @@
 //
-//  UserCell.swift
+//  FoodCell.swift
 //  UICollectionViewCompositionalLayout
 //
 //  Created by Вячеслав Квашнин on 30.07.2022.
@@ -8,11 +8,13 @@
 import Foundation
 import UIKit
 
-class UserCell: UICollectionViewCell, SelfConfiguringCell {
+
+class FoodCell: UICollectionViewCell, SelfConfiguringCell {
     
-    static var reuseId: String = "UserCell"
+    static var reuseId: String = "FoodCell"
     
     let friendImageView = UIImageView()
+    let label = UILabel()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -28,14 +30,15 @@ class UserCell: UICollectionViewCell, SelfConfiguringCell {
     }
     
     func setupConstraints() {
-        friendImageView.translatesAutoresizingMaskIntoConstraints = false
-        friendImageView.backgroundColor = .systemBlue
-        addSubview(friendImageView)
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.backgroundColor = .systemBlue
+        addSubview(label)
         friendImageView.frame = self.bounds
+//        label.text = "123"
         backgroundColor = .green
     }
     
     func configure(with intValue: Int) {
-        print("123")
+        label.text = String(intValue)
     }
 }
